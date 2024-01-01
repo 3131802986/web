@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .socre{
+            display:inline-block;
+            width:400px;
+            height:200px;
+
+        }
+        .submit {
+            display: inline-block;
+            position:absolute;
+            top:160px;
+            width: 80px;
+            height: 40px;
+            background-color:rgb(66, 160, 223);
+            text-align:center;
+        }
+            .submit:hover {
+                background-color: rgb(55, 135, 188);
+            }
+    </style>
+    <script>
+        function submitOnclick(){
+            var socre = document.getElementById("socre");
+            localStorage.setItem("data", socre.value);
+            alert("提交成功");
+        }
+        function read() {
+            
+            var data= localStorage.getItem("data");
+            alert(data);
+        }
+    </script>
+</head>
+<body>
+    <textarea class="socre" id="socre"></textarea>
+    <div class="submit" onclick="submitOnclick()">提交</div>
+    <div class="submit" style="top:120px" onclick="read()">读取</div>
+</body>
+</html>
